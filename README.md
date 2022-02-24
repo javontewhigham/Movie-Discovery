@@ -28,6 +28,7 @@
 	+ `sudo -u postgres psql`
 	+ `pip3 install psycopg2-binary`
 	+ `pip3 install Flask-SQLAlchemy==2.1`
+	+ `pip3 install flask-login`
 + Go to https://developers.themoviedb.org/3/getting-started/authentication to receive an API key from TMDB
 + Create a file named .env in the directory with the other files and inside the .env file, put `API_KEY = "{insert your key here}"`
 + Go to https://signup.heroku.com/ to create a Heroku account. In your terminal, run `heroku login -i` and login to Heroku. Next, run `heroku addons:create heroku-postgresql:hobby-dev -a {your-app-name}` to create a remote database
@@ -52,4 +53,4 @@
 	+ I solved this issue by passing the random movie choice id into the html form and grabbing that same value and adding it to a databse along with the current user, rating, and comment.
 
 ### Heroku app link
-+ [Javonte&apos;s Movie Explorer Web App](https://desolate-island-05503.herokuapp.com/)
++ [Javonte&apos;s Movie Explorer Web App](https://obscure-temple-37673.herokuapp.com/)
