@@ -43,13 +43,13 @@
 
 ### Technical issues I encountered:
 + One issue I had was trying to display all the genres of a movie on my web app instead of only one of it&apos;s genres.
-	+ How I solved the issue: I had to loop through every json response I received for &apos;genre&apos; from the TMDB API call and join them within a list to pass to my web app so it could display all the genres a movie has.
+	+ I solved this issue by looping through every json response I received for &apos;genre&apos; from the TMDB API call and join them within a list to pass to my web app so it could display all the genres a movie has.
 + Another issue I encountered was trying to use the TMDB API call to fetch a movie&apos;s poster image instead of hard coding it into a list.
-	+ How I solved the issue: I had to make an API call to TMDB to receive a json response that contained the poster path for a particular movie. I also had to make another API call to TMDB to receive the base url for the poster path. Once I received both of those, I concatenated them to receive the full poster image to pass to my web app.
+	+ I solved this issue by making an API call to TMDB to receive a json response that contained the poster path for a particular movie. I also had to make another API call to TMDB to receive the base url for the poster path. Once I received both of those, I concatenated them to receive the full poster image to pass to my web app.
 + The next issue I had was trying to have the app keep track of what user was logged in so that it could be displayed if that user left a review.
 	+ I solved this issue by simply implementing the Flask login functionality since it has built in methods to keep track and grab the name of the user that&apos;s logged in upon request.
 + I also had to deal with how to let the system know what review is associated with which movie.
-	+ I solved this by passing the random movie choice id into the html form and grabbing that same value and adding it to a databse along with the current user, rating, and comment.
+	+ I solved this issue by passing the random movie choice id into the html form and grabbing that same value and adding it to a databse along with the current user, rating, and comment.
 
 ### Heroku app link
 + [Javonte&apos;s Movie Explorer Web App](https://desolate-island-05503.herokuapp.com/)
