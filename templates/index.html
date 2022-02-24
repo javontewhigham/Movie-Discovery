@@ -1,17 +1,50 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="/static/style.css"/>
-    </head>
-    <body>
-        <center>
-            <h1>Movie Explorer</h1>
-            <h2>{{title}}</h2>
-            <h3>{{tagline}}</h3>
-            <div class="genre">Genres: {{genre}}</div>
-            <br />
-            <img src= "{{image}}"/>
-            <br />
-            <a href = "{{link}}">Click to see movie's Wikipedia page.</a>
-        </center>
-    </body>
+
+<head>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+
+<body>
+    <form method="POST" action="/logout">
+        <p align="right">
+            <input type="submit" value="Logout">
+        </p>
+    </form>
+    <center>
+        <h1>Movie Explorer</h1>
+        <h2>{{title}}</h2>
+        <h3>{{tagline}}</h3>
+        <div class="genre">Genres: {{genre}}</div>
+        <br />
+        <img src="{{image}}" />
+        <br />
+        <a href="{{link}}">Click to see movie's Wikipedia page.</a>
+        <br> <br>
+        <div class="review_form">
+            <form method="POST" action="/review_form">
+                Movie ID: <input type="text" name="movie_id" value="{{random_movie}}" size="3" readonly>
+                <br> <br>
+                Rating: <input type="text" name="rating" maxlength="1" size="1"> / 5 stars
+                <br> <br>
+                <textarea rows="3" cols="30" name="comment" placeholder="Leave a comment (optional)"></textarea>
+                <br> <br>
+                <input type="submit" value="Submit">
+            </form>
+            <br>
+        </div>
+        <div class="reviews">
+            <div class="review_headline">
+                <u>Look below to see what others think</u>
+                <br>
+            </div>
+            {% for i in range(total_reviews) %}
+            <p>User: {{reviews[i].current_username}}</p>
+            <p>Rating: {{reviews[i].rating}}/5</p>
+            <p>Comments: {{reviews[i].comment}}</p>
+            <br>
+            {% endfor %}
+        </div>
+    </center>
+</body>
+
 </html>

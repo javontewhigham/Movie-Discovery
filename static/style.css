@@ -32,3 +32,24 @@ a {
     color: white;
     font-family: cursive;
 }
+
+.login_signup {
+    font-size: 20px;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+.review_form {
+    font-size: 15 px;
+    font-family: cursive;
+}
+
+.reviews {
+    font-size: 20px;
+    font-family: cursive;
+}
+
+.review_headline {
+    font-size: 25px;
+    font-family: cursive;
+}

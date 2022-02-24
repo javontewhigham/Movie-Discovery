@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+
+<body>
+    <center>
+        <div class="login_signup">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            {{message}}
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <br>
+            Enter username to login
+            <form method="POST" action="/login">
+                <input type="text" name="username" placeholder="Enter username">
+                <input type="submit" value="Login">
+            </form>
+            If you have no account yet, please go to the <a href="{{url_for('signup_form')}}">sign up page</a>
+        </div>
+    </center>
+</body>
+
+</html>
