@@ -5,6 +5,12 @@
 </head>
 
 <body>
+    <style>
+        body {
+            background-image: url("https://media.istockphoto.com/vectors/vector-movie-festival-poster-with-old-movie-camera-vector-id1036736820?k=20&m=1036736820&s=170667a&w=0&h=yGr_5KAulO2vqXedFlrb5I2NUagWPnr6ekmR1sbU7ss=");
+            background-size: cover;
+        }
+    </style>
     <center>
         <div class="login_signup">
             {% with messages = get_flashed_messages() %}
@@ -20,7 +26,7 @@
                 <input type="text" name="username" placeholder="Enter a username">
                 <input type="submit" value="Sign up">
             </form>
-            If you already have an account, please go to the <a href="{{url_for('index')}}"> login page</a>
+            If you already have an account, please <a href="{{url_for('index')}}"> login</a>
         </div>
     </center>
 </body>

@@ -5,6 +5,12 @@
 </head>
 
 <body>
+    <style>
+        body {
+            background-image: url("https://s3.envato.com/files/bb7032e3-2b6a-41a9-8cde-361407d75bc6/inline_image_preview.jpg");
+            background-size: cover;
+        }
+    </style>
     <form method="POST" action="/logout">
         <p align="right">
             <input type="submit" value="Logout">
@@ -20,6 +26,10 @@
         <br />
         <a href="{{link}}">Click to see movie's Wikipedia page.</a>
         <br> <br>
+        <div class="review_headline">
+            <u>Leave a review!</u>
+            <br><br>
+        </div>
         <div class="review_form">
             <form method="POST" action="/review_form">
                 Movie ID: <input type="text" name="movie_id" value="{{random_movie}}" size="3" readonly>
@@ -30,7 +40,6 @@
                 <br> <br>
                 <input type="submit" value="Submit">
             </form>
-            <br>
         </div>
         <div class="reviews">
             <div class="review_headline">
