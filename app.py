@@ -72,7 +72,7 @@ def login():
         ).first()  # If username user inputs is already in database
         if user:
             login_user(user)
-            return flask.redirect("/logged_in")  # Redirect them to the main page
+            return flask.redirect("/main")  # Redirect them to the main page
         else:
             flask.flash("No account found with that username. Please sign up!")
             return flask.redirect(
@@ -107,9 +107,9 @@ def signup():
             )  # If not, add username to database and redirect user to login page so they can log in with new username
 
 
-@app.route("/logged_in", methods=["GET", "POST"])  # Displays main page
+@app.route("/main", methods=["GET", "POST"])  # Displays main page
 @login_required  # Redirects user to login page if they try to manually access main page
-def logged_in():
+def main():
     movie_id = [557, 558, 559, 1930, 102382, 315635, 429617, 634649]
     random_movie = random.choice(movie_id)
     movie_data = get_movie_data(random_movie)
@@ -157,7 +157,7 @@ def review_form():
             )
         )  # Takes user input from review section and add to database accordingly
         db.session.commit()
-        return flask.redirect("/logged_in")  # And redirect user back to main page
+        return flask.redirect("/main")  # And redirect user back to main page
 
 
 app.run(host=os.getenv("IP", "0.0.0.0"), port=int(os.getenv("PORT", 8080)), debug=True)
